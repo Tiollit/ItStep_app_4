@@ -7,6 +7,25 @@ using namespace std;
 
 int main ()
 {
-
+	int b;
+	const int a = 4;
+	int arr[a][a];
+	cout << "Incert number:" << endl;
+	cin >> b;
+	for (int i = 0; i < a; i++)
+	{ 
+		for (int j = 0; j < a; j++)
+		{
+			if (i == 0 && j == 0) arr[i][j] = b;
+			else
+			{
+				arr[i][j] = b + 1;
+				b = b + 1;
+				cout << arr[i][j] <<" ";
+			}			
+		}
+		cout << endl;
+	}
+	
     return 0;
 }
