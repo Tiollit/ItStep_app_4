@@ -10,7 +10,7 @@ int main()
     srand(time(0));
     const int a = 4;
     const int b = 5;
-    int arr[a][b];
+    int arr[a][b]; int arr2[a][b];
     int c, d, f;
     for (int i = 0;i < a;i++)
     {
@@ -27,10 +27,20 @@ int main()
     {
         for (int j = 0;j < b;j++)
         {
-            d = i
-                do d = c - d
-                    while (d > i);
+            d = j + c;
+                while (d > b)
+                {
+                    d = d - b;
+                }                
+                arr2[i][d] = arr[i][j];
+                cout << arr2[i][d] << " <- " << arr[i][j] << endl;
         }
+        cout << endl;
+    }
+    for (int i = a; i < a; i++)
+    {
+        for (int j = 0; j < b; j++)
+            cout << arr2[i][j] << "";
         cout << endl;
     }
 
