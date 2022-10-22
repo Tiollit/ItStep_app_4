@@ -4,31 +4,35 @@
 #include <time.h>
 #include <Windows.h>
 using namespace std;
-void RandArray(int arr[], const uint32_t size)
-{
-    for (size_t i = 0; i < size; i++)
-    {
-        arr[i] = rand() % 10;
-    }
-}
-void PrintArray(int arr[], const uint32_t size)
-{
-    for (size_t i = 0; i < size; i++)
-    {
-        cout << arr[i] << "\t";
-    }
-    cout << endl;
-}
+
 int main()
 {
     srand(time(0));
-    const uint32_t size = 5;
-    const uint32_t size2 = 3;
-    int arr[size];
-    int arr2[size2];
-    RandArray(arr, size);
-    PrintArray(arr, size);
-    RandArray(arr2, size2);
-    PrintArray(arr2, size2);
+    const int a = 4;
+    const int b = 5;
+    int arr[a][b];
+    int c, d, f;
+    for (int i = 0;i < a;i++)
+    {
+        for (int j = 0;j < b;j++)
+        {
+            arr[i][j] = rand() % 10;
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << "Incert number" << endl;
+    cin >> c;
+    for (int i = 0;i < a;i++)
+    {
+        for (int j = 0;j < b;j++)
+        {
+            d = i
+                do d = c - d
+                    while (d > i);
+        }
+        cout << endl;
+    }
+
     return 0;
 }
