@@ -6,7 +6,7 @@
 using namespace std;
 int Sum(int a, int b, int c)
 {
-    cout << "Incert numbers: " << endl;
+    cout << "Incert 2 numbers: " << endl;
     cin >> a >> b;
     c = 0;
     if (a > b)
@@ -17,12 +17,11 @@ int Sum(int a, int b, int c)
     {
         for (i = b; i < a; i++) c = c + i;
     }
-    return c;
+    cout << c << endl;
 }
 int main()
 { 
     int a, b, c;
-    Sum(a, b, c);
-    cout << c << endl;   
+    Sum(a, b, c);    
     return 0;
 }
