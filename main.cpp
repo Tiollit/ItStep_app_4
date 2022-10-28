@@ -3,32 +3,39 @@
 #include <iostream>
 #include <time.h>
 #include <Windows.h>
+#include <cmath>
 using namespace std;
-void RandArray(int arr[], const uint32_t size)
+int IsLucky(int Lucky, int b)
 {
-    for (size_t i = 0; i < size; i++)
-    {
-        arr[i] = rand() % 10;
-    }
-}
-void PrintArray(int arr[], const uint32_t size)
-{
-    for (size_t i = 0; i < size; i++)
-    {
-        cout << arr[i] << "\t";
-    }
-    cout << endl;
+    b = 0;
+    int c = 0; int k = 0;
+        for (int j = 5; j > 2; j--)
+        {
+            k = Lucky / pow(10, j);
+            b = b + k;
+            Lucky = Lucky - k * pow(10, j);
+            //cout << "b: " << b << " Lucky: " << Lucky << endl;
+        }
+        for (int j = 2; j > 0; j--)
+        {
+            k = Lucky / pow(10, j);
+            c = c + k;
+            Lucky = Lucky - k * pow(10, j);
+            //cout << "c: " << c << " Lucky: " << Lucky << endl;
+        }
+        c = c + Lucky;
+        //cout << c << endl;
+        if (b == c) cout << "Incerted number is Happy";
+        else cout << "Incerted number is not Happy";
+        return 0;
+    
 }
 int main()
 {
-    srand(time(0));
-    const uint32_t size = 5;
-    const uint32_t size2 = 3;
-    int arr[size];
-    int arr2[size2];
-    RandArray(arr, size);
-    PrintArray(arr, size);
-    RandArray(arr2, size2);
-    PrintArray(arr2, size2);
+    int Lucky;
+    int c = 0, b = 0;
+    cout << "Incert 6-symbol number: " << endl;
+    cin >> Lucky;
+    IsLucky(Lucky, b);
     return 0;
 }
