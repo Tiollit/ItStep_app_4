@@ -1,34 +1,33 @@
 // This is a personal academic project. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
+// Написати функцію, що реалізує алгоритм лінійного пошуку заданого ключа в одновимірному масиві.
 #include <iostream>
 #include <time.h>
 #include <Windows.h>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
-void RandArray(int arr[], const uint32_t size)
+int Search(int arr[10], int Key)
 {
-    for (size_t i = 0; i < size; i++)
+    for (int i = 0; i < 10; i++)
     {
-        arr[i] = rand() % 10;
+        if (arr[i] == Key) cout << "Key is found in position:  " << i << endl;
     }
+    return 0;
 }
-void PrintArray(int arr[], const uint32_t size)
-{
-    for (size_t i = 0; i < size; i++)
-    {
-        cout << arr[i] << "\t";
-    }
-    cout << endl;
-}
+
 int main()
 {
-    srand(time(0));
-    const uint32_t size = 5;
-    const uint32_t size2 = 3;
-    int arr[size];
-    int arr2[size2];
-    RandArray(arr, size);
-    PrintArray(arr, size);
-    RandArray(arr2, size2);
-    PrintArray(arr2, size2);
+    srand(time(NULL));
+    int Key;
+    int arr[10];
+    for (int i = 0; i < 10; i++)
+    {
+        arr[i] = 1 + rand() % 98;
+        cout << arr[i] << " ";
+    }
+    cout << "Incert a Key: " << endl;
+    cin >> Key;
+    Search(arr, Key);
     return 0;
 }
