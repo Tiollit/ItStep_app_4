@@ -18,7 +18,7 @@ int Search(int arr[10], int Key)
 
 int main()
 {
-    srand(time(NULL));
+    srand(time(0));
     int Key;
     int arr[10];
     for (int i = 0; i < 10; i++)
