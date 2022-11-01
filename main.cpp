@@ -6,28 +6,26 @@
 #include <Windows.h>
 #include <cmath>
 using namespace std;
-int ten(int n, int sum, int key)
-{    
-    for (int i = n; i > 0; i--)
-    {
-        int temp, t;
-        t = pow(10, i - 1);
-        temp = key / t;
-        sum += temp * pow(2, i - 1);
-        key = key - temp * pow(10, i - 1); 
-        cout << temp << " " << sum << " " << key << endl;
+int ten(int sum, long long key)
+{   
+    long long t;
+    int i = 0;
+    while (key > 0)
+    {       
+        t = key / 10;        
+        if (t == 1) sum += pow(2, i);
+        i += 1;
+        key /= 10;
     }
     return sum;
 }
 
 int main()
 {
-    int temp, t, key, n = 1, sum;
+    long long t, key;    
     cout << "Incert number in 2-s sistem: " << endl;
-    cin >> key; 
-    while ((key /= 10) > 0) n++;
-    cout << n << endl;
-    sum = ten(n, 0, key);
+    cin >> key;    
+    int sum = ten(0, key);
     cout << "The number in 10-s system: " << sum;
     return 0;
 }
